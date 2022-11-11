@@ -9,13 +9,13 @@ import {
 
 export default function Listing() {
     const [list, setList] = useState([]);
-    const test_url = "https://encompasscors.herokuapp.com/https://www.ticombo.com/prod/discovery/search/events?keyword=&competition=Premier%20League&sort=upcoming&page=1&limit=20";
+    const upcoming_url = "https://encompasscors.herokuapp.com/https://www.ticombo.com/prod/discovery/search/events?keyword=&competition=Premier%20League&sort=upcoming&page=1&limit=20";
 
     function getTestData() {
-        axios.get(test_url)
+        axios.get(upcoming_url)
         .then(res =>{
             setList(res.data.payload.results);
-            console.log(res.data.payload.results[3]);
+            // console.log(res.data.payload.results[0]);
             // console.log(res.data.payload.results[0].filters.team);
             // console.log(res.data.payload.results[0].inventory.startPrice);
             // console.log(res.data.payload.results[0].inventory.forSale);
@@ -38,7 +38,7 @@ export default function Listing() {
                         </div>
                         <div className="event-action">
                             <SiteButton buttonTheme="light" buttonBorder={false}>
-                                <Link href="/#limitless">View Tickets</Link>
+                                <Link href={`/leagues/${item.eventId}`}>View Tickets</Link>
                             </SiteButton>
                         </div>
                     </div>
