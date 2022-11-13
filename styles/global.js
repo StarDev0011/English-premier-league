@@ -27,7 +27,6 @@ const GlobalStyles = createGlobalStyle`
   }
 
   html {
-    font-size: 62.5%;
     scroll-behavior: smooth;
     @media(min-width: 112.5em){
       font-size: 75%;
@@ -47,74 +46,30 @@ const GlobalStyles = createGlobalStyle`
     -ms-overflow-style: -ms-autohiding-scrollbar;
     font-weight: normal;
     color: ${theme.colors.bodytxtColor};
-    background: ${theme.colors.whiteColor};
+    background: ${theme.colors.primacybgColor};
     box-sizing: border-box;
     overscroll-behavior: none;
     font-family: 'Assistant';
     
   }
-  .slick-next:before, .slick-prev:before {
-    font-size: 36px;
+  .container {
+    margin-left: auto;
+    margin-right: auto;
   }
-  .slick-dots {
-    bottom: 25px;
+  .body {
+    max-width: 1160px;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 20px;
+    display: flex;
   }
-  .home_slider .slick-prev {
-    left: 10px;
-    top: 52%;
-    z-index: 9;
+  .left_bar {
+    width: 75%;
+    padding: 10px;
   }
-  .home_slider .slick-next {
-    right: 25px;
-    top: 52%;
-    z-index: 9;
-  }
-  .limitless_slider .slick-prev {
-    left: 10px;
-    z-index: 9;
-  }
-  .limitless_slider .slick-next {
-    right: 25px;
-    z-index: 9;
-  }
-  video#video_bg {
-    position: fixed;
-    z-index: -1;
-    width: 100vw;
-  }
-  .limitless_slider .slick-next:before, .limitless_slider .slick-prev:before {
-    color: #000;
-  }
-  @keyframes floating {
-    0% { transform: translate(200px,  0px); }
-    100%   { transform: translate(0, 0px); }   
-  }
-  @keyframes floating1 {
-    0% { transform: translate(-200px,  0px); }
-    100%   { transform: translate(0, 0px); }   
-  }
-
-  @keyframes fadeIn {
-    0% {opacity:0;}
-    100% {opacity:1;}
-  }
-
-  @keyframes slideInFromLeft {
-    0% {
-      transform: translateX(-100%);
-    }
-    100% {
-      transform: translateX(0);
-    }
-  }
-  @media screen and (max-width: 465px){
-    video#video_bg {
-      width: auto;
-      height: 100vh;
-    }
-    .roadmap_section, .home_slider .slick-prev, .home_slider .slick-next {
-      display:none!important;
-    }
+  .right_bar {
+    width: 25%;
+    padding: 10px;
   }
 `
 

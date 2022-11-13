@@ -7,9 +7,9 @@ import {
     ListingWrapper
   } from './styles'
 
-export default function Listing() {
+export default function Listing({title}) {
     const [list, setList] = useState([]);
-    const upcoming_url = "https://encompasscors.herokuapp.com/https://www.ticombo.com/prod/discovery/search/events?keyword=&competition=Premier%20League&sort=upcoming&page=1&limit=20";
+    const upcoming_url = "https://encompasscors.herokuapp.com/https://www.ticombo.com/prod/discovery/search/events?keyword=&competition=Premier%20League&sort=upcoming&page=1&limit=10";
 
     function getTestData() {
         axios.get(upcoming_url)
@@ -28,6 +28,7 @@ export default function Listing() {
     return(
         <>
             <ListingWrapper className="league_listing">
+                <h1>{title}</h1>
                 {list.map((item) => (
                     <div className="league_item" key={item.name}>
                         <div className="event-date">{item.date.from}</div>
