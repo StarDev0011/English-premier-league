@@ -50,6 +50,8 @@ const GlobalStyles = createGlobalStyle`
     box-sizing: border-box;
     overscroll-behavior: none;
     font-family: 'Assistant';
+    font-size: 14px;
+    line-height: 1.4;
     
   }
   .container {
