@@ -4,17 +4,16 @@ import { SiteButton } from '../atoms/Main_button'
 import Link from 'next/link'
 import Layout from '../components/Layout'
 import Listing from '../organizations/Listing'
+import Banner from '../organizations/Banner'
 
 export default function Home() {
   return (
     <Layout>
-    <div className="container">
-      <SiteButton buttonTheme="light" buttonBorder={true}>
-        <Link href="/#limitless">View Release</Link>
-      </SiteButton>
-      <h1>MOST POPULAR FOOTBALL TICKETS</h1>
-      <Listing />
-    </div>
+      <div className="container">
+        <Banner />
+        <h1>MOST POPULAR FOOTBALL TICKETS</h1>
+        <Listing />
+      </div>
     </Layout>
   )
 }
