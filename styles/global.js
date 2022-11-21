@@ -73,6 +73,21 @@ const GlobalStyles = createGlobalStyle`
     width: 25%;
     padding: 10px;
   }
+  .articles {
+    margin-top: 30px;
+    display: flex;
+  }
+  .articles_list {
+    width: 58%;
+    margin-right: 2%;
+    background: #fff;
+    padding: 20px;
+  }
+  .transactions_list {
+    width: 40%;
+    background: #fff;
+    padding: 20px;
+  }
 `
 
 export default GlobalStyles

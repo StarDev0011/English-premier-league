@@ -2,6 +2,7 @@ import Header from "./Header"
 import Footer from "./Footer"
 import Head from 'next/head'
 import SideBar from "../molecules/SideBar"
+import Subscribe from "../organizations/Subscribe"
 
 export default function Layout({children}) {
     return(
@@ -13,6 +14,7 @@ export default function Layout({children}) {
             </Head>
             <Header />
             <main>{children}</main>
+            <Subscribe />
             <Footer />
         </>
     )

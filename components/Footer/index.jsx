@@ -1,9 +1,10 @@
 import FooterBottom from "../../molecules/FooterBottom"
+import Footer_Top from "../../molecules/Footer_menu"
 
 export default function Footer(){
     return(
         <>
-            <h1>Footer</h1>
+            <Footer_Top />
             <FooterBottom />
         </>
     )

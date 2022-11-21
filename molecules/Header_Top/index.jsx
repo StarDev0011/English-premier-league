@@ -12,7 +12,7 @@ export default function HeaderTop() {
                     <Image src={vip_football_logo} alt="Logo" width={250} />
                 </Link>
             </LogoWrapper>
-            <SearchBar />
+            <SearchBar button_text="Search" />
         </HeaderTopWrapper>
     )
 }

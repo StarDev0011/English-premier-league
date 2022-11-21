@@ -6,6 +6,8 @@ import Layout from '../components/Layout'
 import Listing from '../organizations/Listing'
 import Banner from '../organizations/Banner'
 import SideBar from '../molecules/SideBar'
+import News from '../molecules/News'
+import Transactions from '../molecules/Transactions'
 
 export default function Home() {
   return (
@@ -17,10 +19,10 @@ export default function Home() {
             <Listing title="MOST POPULAR FOOTBALL TICKETS" />
             <div className='articles'>
               <div className='articles_list'>
-                Articles
+                <News />
               </div>
               <div className='transactions_list'>
-                Transactions
+                <Transactions />
               </div>
             </div>
           </div>

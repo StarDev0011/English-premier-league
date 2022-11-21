@@ -1,3 +1,4 @@
+import Link from "next/link"
 import { SiteButton } from "../../atoms/Main_button"
 import { WhyBookWrapper } from "./styles"
 
@@ -13,7 +14,9 @@ export default function WhyBook() {
                 <li><img src = "/images/check.png" />Last minute bookings</li>
                 <li><img src = "/images/check.png" />16 years online serving fans</li>
             </ul>
-            <SiteButton buttonTheme="light" buttonBorder={false}>Learn More</SiteButton>
+            <SiteButton buttonTheme="light" buttonBorder={false}>
+                <Link href="/">Learn More</Link>
+            </SiteButton>
         </WhyBookWrapper>
     )
 }
