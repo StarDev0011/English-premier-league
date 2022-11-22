@@ -12,6 +12,15 @@ export const ListingWrapper = styled.div`
       padding: 20px;
       margin-top: auto;
       margin-bottom: auto;
+      text-align: center;
+    }
+    .month {
+      font-weight: bold;
+      text-transform: uppercase;
+    }
+    .date {
+      font-weight: bold;
+      font-size: 30px;
     }
     .event-info {
       padding: 20px;
