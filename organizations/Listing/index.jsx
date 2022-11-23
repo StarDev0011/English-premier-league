@@ -39,7 +39,7 @@ export default function Listing({title}) {
                         <div className="event-info">
                             <div className="event-name">{item.name}</div>
                             <div className="event-description">{item.description}</div>
-                            <div className="event-location">{getHours(new Date(item.date.from),'kk')}:{getMinutes(new Date(item.date.from))} - {item.location.venue}, {item.location.city}, {item.location.country}</div>
+                            <div className="event-location">{getHours(new Date(item.date.from),'kk')}:{item.date.from.split('T')[1].split(':')[1]} - {item.location.venue}, {item.location.city}, {item.location.country}</div>
                         </div>
                         <div className="event-action">
                             <SiteButton buttonTheme="light" buttonBorder={false}>

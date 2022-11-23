@@ -25,6 +25,8 @@ export const ListingWrapper = styled.div`
     .event-info {
       padding: 20px;
       width: 70%;
+      margin-top: auto;
+      margin-bottom: auto;
       .event-name {
         font-size: 13px;
         text-transform: uppercase;

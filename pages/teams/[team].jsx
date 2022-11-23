@@ -2,8 +2,6 @@ import { useRouter } from "next/router";
 import axios from "axios";
 import { useEffect, useState } from "react";
 import { ListingWrapper } from "../../organizations/Listing/styles";
-import Link from "next/link";
-import { SiteButton } from "../../atoms/Main_button";
 import Layout from "../../components/Layout";
 
 export default function Product() {
