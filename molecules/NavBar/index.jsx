@@ -5,19 +5,19 @@ export default function Nav() {
     const MenuData = [
         {
             key: 'Liverpool',
-            label:"liverpool"
+            label:"Liverpool FC"
         },
         {
-            key: 'Manchester United',
-            label:"manchester-united"
+            key: 'Manchester United FC',
+            label:"Manchester United FC"
         },
         {
             key: 'Arsenal',
-            label:"arsenal"
+            label:"Arsenal FC"
         },
         {
             key: 'Chelsea',
-            label:"chelsea"
+            label:"Chelsea FC"
         }
     ]
     return (

@@ -2,7 +2,7 @@ import axios from "axios";
 import { useEffect, useState } from "react";
 import { SiteButton } from "../../atoms/Main_button";
 import Link from "next/link";
-import { getDate, getMonth, getYear, getHours, getMinutes} from 'date-fns'
+import { getDate, getMonth, getYear, getHours } from 'date-fns'
 
 import { ListingWrapper } from './styles'
 
@@ -26,10 +26,6 @@ export default function Listing({title}) {
     useEffect(()=>{
     getTestData();
     },[]);
-
-    function getSingleLeague(e) {
-        console.log(e)
-    }
       
     return(
         <>

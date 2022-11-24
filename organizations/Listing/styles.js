@@ -2,7 +2,7 @@ import styled from 'styled-components'
 
 export const ListingWrapper = styled.div`
   width: 100%;
-  padding: 2rem;
+  padding: 20px;
   background: ${(props) => props.theme.colors.whiteColor};
   .league_item {
     display: flex;
