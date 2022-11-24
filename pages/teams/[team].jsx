@@ -1,12 +1,11 @@
 import { useRouter } from "next/router";
 import axios from "axios";
 import { useEffect, useState } from "react";
-import { ListingWrapper } from "../../organizations/Listing/styles";
+import { ListingWrapper, TeamWrapper, TeamBody } from "../../organizations/Listing/styles";
 import Layout from "../../components/Layout";
 import { getDate, getMonth, getYear, getHours } from 'date-fns'
 import { SiteButton } from "../../atoms/Main_button";
 import Link from "next/link";
-import { TeamWrapper, TeamBody } from "./styles";
 import WhyBook from "../../components/WhyBook";
 import Popular from "../../components/Leagues";
 

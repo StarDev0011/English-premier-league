@@ -1,10 +1,9 @@
 import { useRouter } from "next/router";
 import axios from "axios";
 import { useEffect, useState } from "react";
-import { ListingWrapper } from "../../organizations/Listing/styles";
+import { ListingWrapper, LeagueWrapper, LeagueBody, LeagueBodyTop, LeagueBodyBottom } from "../../organizations/Listing/styles";
 import Link from "next/link";
 import { SiteButton } from "../../atoms/Main_button";
-import { LeagueWrapper, LeagueBody, LeagueBodyTop, LeagueBodyBottom } from "./styles";
 import Layout from "../../components/Layout";
 import WhyBook from "../../components/WhyBook";
 import { getDate, getMonth, getYear, getHours, getDay } from 'date-fns'
