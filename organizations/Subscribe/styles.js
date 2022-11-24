@@ -11,4 +11,7 @@ export const SubscribeBody = styled.div`
     margin-right: auto;
     max-width: 600px;
     text-align: center;
+    form{
+        margin-top: 30px;
+    }
 `

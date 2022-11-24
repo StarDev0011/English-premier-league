@@ -21,10 +21,16 @@ export default function Listing({title}) {
             // console.log(res.data.payload.results[0].inventory.forSale);
             // console.log(res.data.payload.results[0].img);
         })
-      }
-      useEffect(()=>{
-        getTestData();
-      },[]);
+    }
+
+    useEffect(()=>{
+    getTestData();
+    },[]);
+
+    function getSingleLeague(e) {
+        console.log(e)
+    }
+      
     return(
         <>
             <ListingWrapper className="league_listing">
@@ -43,7 +49,7 @@ export default function Listing({title}) {
                         </div>
                         <div className="event-action">
                             <SiteButton buttonTheme="light" buttonBorder={false}>
-                                <Link href={`/leagues/${item.eventId}`}>View Tickets</Link>
+                                <Link href={`/leagues/${item.eventId}?id=${item.safeUrlName}`}>View Tickets</Link>
                             </SiteButton>
                         </div>
                     </div>
