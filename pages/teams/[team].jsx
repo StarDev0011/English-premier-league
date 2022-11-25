@@ -18,7 +18,6 @@ export default function Product() {
   function getTestData() {
     axios.get(team_url).then((res) => {
       setList(res.data.payload.results);
-      console.log(res.data.payload);
     });
   }
   useEffect(() => {

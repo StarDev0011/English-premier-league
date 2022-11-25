@@ -5,7 +5,7 @@ import { WhyBookWrapper } from "./styles"
 export default function WhyBook() {
     return(
         <WhyBookWrapper>
-            <h1>Why Book With Us?</h1>
+            <h1 className="primary-text">Why Book With Us?</h1>
             <ul>
                 <li><img src = "/images/check.png" /><span>150% money-back guarantee</span></li>
                 <li><img src = "/images/check.png" />Real-time inventory</li>

@@ -32,6 +32,9 @@ export default function Nav() {
                             <Link href={`/teams/${item.label}`}>{item.key}</Link>
                         </li>
                     ))}
+                    <li>
+                        <Link href="/All">All</Link>
+                    </li>
                 </ul>
             </NavBarBody>
         </NavBarWrapper>

@@ -7,6 +7,7 @@ export const ListingWrapper = styled.div`
   .league_item {
     display: flex;
     width: 100%;
+    border-bottom: solid 1px #eee;
     justify-content: space-between;
     .event-date {
       padding: 20px;
@@ -97,7 +98,45 @@ export const LeagueBodyTop = styled.div`
             }
             .location {
                 color: #d91e00;
+                margin-top: 10px;
             }
+            .start_date {
+              margin: 10px 0;
+            }
+            .subject_to_change {
+              color: #d91e00;
+            }
+            .available_tickets {
+              margin-top: 15px;
+              display: flex;
+              justify-content: center;
+              font-size: 18px;
+              font-weight: bold;
+              .tickets_amount {
+                padding: 10px;
+                background-color: #fff;
+                box-shadow: 0 2px 6px rgb(0 0 0 / 15%);
+              }
+              p {
+                margin-top: auto;
+                margin-bottom: auto;
+                margin-left: 10px;
+                text-transform: uppercase;
+              }
+            }
+            .price {
+              color: #3db900;
+              font-weight: bold;
+              .cost {
+                font-size: 24px;
+              }
+            }
+        }
+        .general_description {
+          margin-top: 10px;
+          p {
+            margin-bottom: 5px;
+          }
         }
     }
     .league_why_book {
@@ -122,12 +161,6 @@ export const LeagueBodyBottom = styled.div`
             padding: 20px 20px 0 20px;
             img{
                 width: 100%;                
-            }
-            p {
-                color: #d91e00;
-                font-size: 18px;
-                font-weight: bold;
-                text-transform: uppercase;
             }
         }
     }

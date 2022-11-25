@@ -54,6 +54,13 @@ const GlobalStyles = createGlobalStyle`
     line-height: 1.4;
     
   }
+  .primary-text {
+    color: #d91e00;
+    font-size: 18px;
+    text-transform: uppercase;
+    border-bottom: solid 1px #eee;
+    padding-bottom: 10px;
+  }
   .container {
     margin-left: auto;
     margin-right: auto;

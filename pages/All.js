@@ -1,9 +1,9 @@
 import Layout from "../components/Layout"
 
-export default function Test() {
+export default function All() {
     return (
         <Layout>
-            <p>Test</p>
+            <p>All</p>
         </Layout>        
     )
 }

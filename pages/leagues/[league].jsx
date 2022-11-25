@@ -66,17 +66,19 @@ export default function Product() {
                 <h3>English Premier League</h3>
                 <h1>{name}</h1>
                 <p className="location">{stadium}, {city}, {country}</p>
-                <h4>
+                <h4 className="start_date">
                   {Daydata[getDay(new Date(date))]}, {getDate(new Date(date))} {Monthdata[getMonth(new Date(date))]} {getYear(new Date(date))} {getHours(new Date(date))}:{date.split('T')[1].split(':')[1]}
                 </h4>
-                <p>* Fixtures are subject to change.</p>
-                <p>{availableTickets} <span>Tickets available</span></p>
-                <p>from {startPrice}</p>
+                <p className="subject_to_change">* Fixtures are subject to change.</p>
+                <div className="available_tickets"><span className="tickets_amount">{availableTickets}</span> <p>Tickets available</p></div>
+                <p className="price">from <span className="cost">€ {startPrice}</span></p>
               </div>
-              <p>Find your seats, select the number of tickets, then click <b>BUY</b> to proceed.</p>
-              <p><b>Whose tickets are listed below?</b></p>
-              <p>All the tickets are listed and priced by approved ticket specialists.</p>
-              <p>Each ticket specialist competes with one another to provide you the lowest prices & the largest selection on the internet.</p>
+              <div className="general_description">
+                <p>Find your seats, select the number of tickets, then click <b>BUY</b> to proceed.</p>
+                <p><b>Whose tickets are listed below?</b></p>
+                <p>All the tickets are listed and priced by approved ticket specialists.</p>
+                <p>Each ticket specialist competes with one another to provide you the lowest prices & the largest selection on the internet.</p>
+              </div>
             </div>
             <div className="league_why_book">
               <WhyBook />
@@ -85,18 +87,25 @@ export default function Product() {
           <LeagueBodyBottom>
             <div className="all_tickets">
               <ListingWrapper className="league_listing">
-              <p>Available tickets</p>
+              <h1 className="primary-text">Available tickets</h1>
                 {list.map((item) => (
                   <div className="league_item" key={item._id}>
-                    <div className="event-date">{item.price.sellingEur}</div>
+                    <div className="seat">
+                      {item.ticket.section} - {item.ticket.category}
+                    </div>
+                    <div className="ticket-price">
+                      <p>€{item.price.sellingEur} per ticket</p>
+                      <SiteButton buttonTheme="light" buttonBorder={false}>
+                        <Link href="/#buy">Buy</Link>
+                      </SiteButton>
+                    </div>
                   </div>
                 ))}
               </ListingWrapper>
             </div>
             <div className="stadium_info">
               <div className="stadium">
-                <p>{stadium}</p>
-                <hr />
+                <h1 className="primary-text">{stadium}</h1>
                 <img src={map} />
               </div>
               <NeedToKnow />

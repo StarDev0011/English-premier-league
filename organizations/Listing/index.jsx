@@ -30,7 +30,7 @@ export default function Listing({title}) {
     return(
         <>
             <ListingWrapper className="league_listing">
-                <h1>{title}</h1>
+                <h1 className="primary-text">{title}</h1>
                 {list.map((item) => (
                     <div className="league_item" key={item.name}>
                         <div className="event-date">
