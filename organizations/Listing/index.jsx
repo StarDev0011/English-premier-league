@@ -6,26 +6,8 @@ import { getDate, getMonth, getYear, getHours } from 'date-fns'
 
 import { ListingWrapper } from './styles'
 
-export default function Listing({title}) {
-    const [list, setList] = useState([]);
+export default function Listing({title, list}) {
     const Monthdata = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec']
-    const upcoming_url = "https://encompasscors.herokuapp.com/https://www.ticombo.com/prod/discovery/search/events?keyword=&competition=Premier%20League&sort=upcoming&page=1&limit=10";
-
-    function getTestData() {
-        axios.get(upcoming_url)
-        .then(res =>{
-            setList(res.data.payload.results);
-            // console.log(res.data.payload.results[0]);
-            // console.log(res.data.payload.results[0].filters.team);
-            // console.log(res.data.payload.results[0].inventory.startPrice);
-            // console.log(res.data.payload.results[0].inventory.forSale);
-            // console.log(res.data.payload.results[0].img);
-        })
-    }
-
-    useEffect(()=>{
-    getTestData();
-    },[]);
       
     return(
         <>
@@ -54,3 +36,4 @@ export default function Listing({title}) {
         </>
     )
 }
+
