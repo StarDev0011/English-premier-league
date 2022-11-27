@@ -9,20 +9,9 @@ import Link from "next/link";
 import WhyBook from "../../components/WhyBook";
 import Popular from "../../components/Leagues";
 
-export default function Product() {
-  const [list, setList] = useState([]);
+export default function Product({team,list}) {
   const Monthdata = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec']
-  const router = useRouter();
-  const team_url = "https://encompasscors.herokuapp.com/https://www.ticombo.com/prod/discovery/search/events?keyword=&competition=Premier%20League&sort=upcoming&team=" + router.query.team + "&page=1&limit=20";
-      
-  function getTestData() {
-    axios.get(team_url).then((res) => {
-      setList(res.data.payload.results);
-    });
-  }
-  useEffect(() => {
-    getTestData();
-  }, []);
+  
   return (
     <Layout>
       <TeamWrapper>
@@ -58,4 +47,16 @@ export default function Product() {
       </TeamWrapper>
     </Layout>
   );
+}
+
+export async function getServerSideProps(ctx) {
+
+  const team = ctx.params.team
+  const team_url = process.env.GET_TEAM_URI + team + "&page=1&limit=20";
+  
+  const response = await axios.get(team_url);
+  
+  return {
+    props: {team, list: response.data.payload.results}, // will be passed to the page component as props
+  }
 }

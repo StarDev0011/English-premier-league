@@ -33,7 +33,7 @@ export default function Nav() {
                         </li>
                     ))}
                     <li>
-                        <Link href="/All">All</Link>
+                        <Link href="/All">View All</Link>
                     </li>
                 </ul>
             </NavBarBody>
