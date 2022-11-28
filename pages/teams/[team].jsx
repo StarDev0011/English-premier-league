@@ -5,7 +5,7 @@ import WhyBook from "../../components/WhyBook";
 import Popular from "../../components/Leagues";
 import Listing from "../../organizations/Listing";
 
-export default function Product({team, list}) {
+export default function Team({team, list}) {
   
   return (
     <Layout>
