@@ -61,6 +61,19 @@ const GlobalStyles = createGlobalStyle`
     border-bottom: solid 1px #eee;
     padding-bottom: 10px;
   }
+  .primary_btn {
+    background: #3db900;
+    color: #fff;
+    border: none;
+    padding: 6px 18px;
+    text-align: center;
+    font-size: 16px;
+    border-radius: 5px;
+    text-transform: uppercase;
+    font-weight: 600;
+    line-height: 1.4;
+    cursor: pointer;
+  }
   .container {
     margin-left: auto;
     margin-right: auto;

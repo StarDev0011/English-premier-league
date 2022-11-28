@@ -11,17 +11,10 @@ import Image from "next/image";
 import Select_Quantity from "../../atoms/Select_Quantity";
 
 export default function League({tickets, league_data}) {
-  const [quantityData, setQuantityData] = useState(1)
   const Monthdata = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec']
   const Daydata = ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday']
 
   const date = league_data.date.start
-
-  const onChangeQuantity = (e) => {
-    e.preventDefault();
-    setQuantityData(e.target.value)
-    console.log(quantityData)
-}
 
   return (
     <Layout>
@@ -59,12 +52,10 @@ export default function League({tickets, league_data}) {
                   <div className="league_item" key={item._id}>
                     <div className="seat">
                       <p>{item.ticket.section} - {item.ticket.category}</p>
-                      <input type="number" value={quantityData}  />
-                      <p>{item.ticket.seating.length}</p>
-                      <Select_Quantity available_quantity={item.ticket.seating.length} onChange={onChangeQuantity} />
+                      <Select_Quantity available_quantity={item.ticket.seating.length} />
                     </div>
                     <div className="ticket-price">
-                      <p>€{item.price.sellingEur.toFixed(2)} per ticket</p>
+                      <p><span>€{item.price.sellingEur.toFixed(2)}</span> per ticket</p>
                       <SiteButton buttonTheme="light" buttonBorder={false}>
                         <Link href="/#buy">Buy</Link>
                       </SiteButton>

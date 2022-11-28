@@ -13,8 +13,6 @@ export const SiteButton = styled.div.attrs((props) => ({
       props.buttonTheme === 'light'
         ? props.theme.colors.whiteColor
         : props.theme.colors.blackColor};
-
-    font-family: ${(props) => props.theme.fonts.headingFont};
     display: flex;
     align-items: center;
     justify-content: center;

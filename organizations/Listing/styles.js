@@ -9,7 +9,24 @@ export const ListingWrapper = styled.div`
     width: 100%;
     border-bottom: solid 1px #eee;
     justify-content: space-between;
-    
+    .seat {
+      padding: 10px;
+    }
+    .ticket-price {
+      padding: 10px;
+      display: flex;
+      align-items: center;
+      p {
+        margin-right: 20px;
+        align-items: center;
+        display: flex;
+        span {
+          font-weight: bold;
+          font-size: 20px;
+          margin-right: 10px;
+        }
+      }
+    }
     .event-date {
       padding: 20px;
       margin-top: auto;
