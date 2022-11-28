@@ -1,4 +1,5 @@
 import axios from "axios";
+import {useState} from 'react'
 import { ListingWrapper, LeagueWrapper, LeagueBody, LeagueBodyTop, LeagueBodyBottom } from "../../organizations/Listing/styles";
 import Link from "next/link";
 import { SiteButton } from "../../atoms/Main_button";
@@ -7,12 +8,20 @@ import WhyBook from "../../components/WhyBook";
 import { getDate, getMonth, getYear, getHours, getDay } from 'date-fns'
 import NeedToKnow from "../../components/Need to know";
 import Image from "next/image";
+import Select_Quantity from "../../atoms/Select_Quantity";
 
 export default function League({tickets, league_data}) {
+  const [quantityData, setQuantityData] = useState(1)
   const Monthdata = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec']
   const Daydata = ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday']
 
   const date = league_data.date.start
+
+  const onChangeQuantity = (e) => {
+    e.preventDefault();
+    setQuantityData(e.target.value)
+    console.log(quantityData)
+}
 
   return (
     <Layout>
@@ -28,8 +37,8 @@ export default function League({tickets, league_data}) {
                   {Daydata[getDay(new Date(date))]}, {getDate(new Date(date))} {Monthdata[getMonth(new Date(date))]} {getYear(new Date(date))} {getHours(new Date(date))}:{date.split('T')[1].split(':')[1]}
                 </h4>
                 <p className="subject_to_change">* Fixtures are subject to change.</p>
-                <div className="available_tickets"><span className="tickets_amount">{league_data.listing.availableTickets}</span> <p>Tickets available</p></div>
-                <p className="price">from <span className="cost">€ {league_data.listing.startPrice.toFixed(2)}</span></p>
+                <div className="available_tickets"><span className="tickets_amount">{tickets.length > 0 ? league_data.listing.availableTickets : 0}</span> <p>Tickets available</p></div>
+                {tickets.length > 0 ? <p className="price">from <span className="cost">€ {league_data.listing.startPrice}</span></p>: <p className="sold_out">Sold Out</p>}
               </div>
               <div className="general_description">
                 <p>Find your seats, select the number of tickets, then click <b>BUY</b> to proceed.</p>
@@ -46,10 +55,13 @@ export default function League({tickets, league_data}) {
             <div className="all_tickets">
               <ListingWrapper className="league_listing">
               <h1 className="primary-text">Available tickets</h1>
-                {tickets.map((item) => (
+                {tickets.length > 0 ? tickets.map((item) => (
                   <div className="league_item" key={item._id}>
                     <div className="seat">
-                      {item.ticket.section} - {item.ticket.category}
+                      <p>{item.ticket.section} - {item.ticket.category}</p>
+                      <input type="number" value={quantityData}  />
+                      <p>{item.ticket.seating.length}</p>
+                      <Select_Quantity available_quantity={item.ticket.seating.length} onChange={onChangeQuantity} />
                     </div>
                     <div className="ticket-price">
                       <p>€{item.price.sellingEur.toFixed(2)} per ticket</p>
@@ -58,7 +70,7 @@ export default function League({tickets, league_data}) {
                       </SiteButton>
                     </div>
                   </div>
-                ))}
+                )):<p>No Available Tickets</p>}
               </ListingWrapper>
             </div>
             <div className="stadium_info">

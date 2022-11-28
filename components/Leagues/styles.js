@@ -12,6 +12,9 @@ export const PopularLeaguesWrapper = styled.div`
     li {
         display: flex;
         margin: 10px 0;
+        a {
+            color: #333;
+        }
     }
     img {
         margin-right: 5px;

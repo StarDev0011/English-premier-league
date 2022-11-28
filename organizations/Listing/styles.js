@@ -9,6 +9,7 @@ export const ListingWrapper = styled.div`
     width: 100%;
     border-bottom: solid 1px #eee;
     justify-content: space-between;
+    
     .event-date {
       padding: 20px;
       margin-top: auto;
@@ -105,6 +106,10 @@ export const LeagueBodyTop = styled.div`
             }
             .subject_to_change {
               color: #d91e00;
+            }
+            .sold_out {
+              font-weight: bold;
+              font-size: 22px;
             }
             .available_tickets {
               margin-top: 15px;
