@@ -11,6 +11,12 @@ export const ListingWrapper = styled.div`
     justify-content: space-between;
     .seat {
       padding: 10px;
+      select {
+        padding: 6px 18px;
+        background: #ddd;
+        border: solid 1px #ddd;
+        font-size: 18px;
+      }
     }
     .ticket-price {
       padding: 10px;
