@@ -1,3 +1,4 @@
+import axios from "axios";
 import { ListingWrapper, LeagueWrapper, LeagueBody, LeagueBodyTop, LeagueBodyBottom } from "../../organizations/Listing/styles";
 import Link from "next/link";
 import { SiteButton } from "../../atoms/Main_button";
@@ -5,6 +6,7 @@ import Layout from "../../components/Layout";
 import WhyBook from "../../components/WhyBook";
 import { getDate, getMonth, getYear, getHours, getDay } from 'date-fns'
 import NeedToKnow from "../../components/Need to know";
+import Image from "next/image";
 
 export default function League({tickets, league_data}) {
   const Monthdata = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec']
@@ -62,7 +64,7 @@ export default function League({tickets, league_data}) {
             <div className="stadium_info">
               <div className="stadium">
                 <h1 className="primary-text">{league_data.metadata.venue}</h1>
-                <img src={league_data.metadata.venueMapUrl} />
+                <Image src = {league_data.metadata.venueMapUrl} alt = "Statidum" width={300} height={300} />
               </div>
               <NeedToKnow />
             </div>      
@@ -78,12 +80,8 @@ export async function getServerSideProps(ctx) {
   const league = ctx.params.league
   const id = ctx.query.id
 
-  const url_prefix = "https://www.ticombo.com/prod/discovery/events/";
-  const url_suffix =
-    "/listings?page=1&limit=20&include=$total&populate=rel.user:firstName,displayName,urlPicture,trustedSeller,metadata%7Creservations:amount,expiresAt,price&sort=bestprice&sellerType=allSellers";
-
-  const league_tickets_url = url_prefix + league + url_suffix;
-  const league_data_url = "https://www.ticombo.com/prod/discovery/events?id=" + id
+  const league_tickets_url = process.env.LEAGUE_PRE_URI + league + process.env.LEAGUE_SUFF_URI;
+  const league_data_url = process.env.LEAGUE_DETAIL_URI + id
 
   const tickets = await axios.get(league_tickets_url)
   const league_detail = await axios.get(league_data_url)  
