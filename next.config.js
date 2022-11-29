@@ -3,6 +3,8 @@ const nextConfig = {
   reactStrictMode: true,
   swcMinify: true,
   env: {
+    MONGODB_URI: "mongodb+srv://ondre:SxPTKQByQaPljhR8@cluster0.4cryn.mongodb.net/all_users?retryWrites=true&w=majority",
+    MONGODB_DB: "Subscribe",
     GET_TEAM_URI: "https://www.ticombo.com/prod/discovery/search/events?keyword=&competition=Premier%20League&sort=upcoming&team=",
     RECENT_TEN_URI:"https://www.ticombo.com/prod/discovery/search/events?keyword=&competition=Premier%20League&sort=upcoming&page=1&limit=10",
     LEAGUE_PRE_URI:"https://www.ticombo.com/prod/discovery/events/",
