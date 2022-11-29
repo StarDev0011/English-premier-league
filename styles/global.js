@@ -84,29 +84,48 @@ const GlobalStyles = createGlobalStyle`
     margin-right: auto;
     margin-top: 20px;
     display: flex;
+    @media (max-width: 465px) {
+      display: block;
+    }
   }
   .left_bar {
     width: 75%;
     padding: 10px;
+    @media (max-width: 465px) {
+      width: 100%;
+    }
   }
   .right_bar {
     width: 25%;
     padding: 10px;
+    @media (max-width: 465px) {
+      width: 100%;
+    }
   }
   .articles {
     margin-top: 30px;
     display: flex;
+    @media (max-width: 465px) {
+      display: block;
+    }
   }
   .articles_list {
     width: 58%;
     margin-right: 2%;
     background: #fff;
     padding: 20px;
+    @media (max-width: 465px) {
+      width: 100%;
+      margin-right: 0;
+    }
   }
   .transactions_list {
     width: 40%;
     background: #fff;
     padding: 20px;
+    @media (max-width: 465px) {
+      width: 100%;
+    }
   }
 `
 

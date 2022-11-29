@@ -3,6 +3,10 @@ import styled from 'styled-components'
 export const SearchBarWrapper = styled.div`
     width: 50%;
     margin-left: 20%;
+    @media (max-width: 465px) {
+        width: 100%;
+        margin-left: 0%;
+    }
     h5 {
         color: #999999;
         font-size: 12px;

@@ -11,6 +11,9 @@ export const ListingWrapper = styled.div`
     justify-content: space-between;
     .seat {
       padding: 10px;
+      @media (max-width: 465px) {
+        padding 10px 0;
+      }
       select {
         padding: 6px 18px;
         background: #ddd;
@@ -22,6 +25,9 @@ export const ListingWrapper = styled.div`
       padding: 10px;
       display: flex;
       align-items: center;
+      @media (max-width: 465px) {
+        padding 10px 0;
+      }
       p {
         margin-right: 20px;
         align-items: center;
@@ -30,6 +36,11 @@ export const ListingWrapper = styled.div`
           font-weight: bold;
           font-size: 20px;
           margin-right: 10px;
+        }
+      }
+      a {
+        @media (max-width: 465px) {
+          padding: 1rem 2rem;
         }
       }
     }
@@ -71,6 +82,9 @@ export const ListingWrapper = styled.div`
     .event-action {
       margin-top: auto;
       margin-bottom: auto;
+      @media (max-width: 465px) {
+        display: none;
+      }
     }
   }
 `
@@ -91,6 +105,12 @@ export const TeamBody = styled.div`
         width: 28%;
         margin-left: 2%;
     }
+    @media (max-width: 465px) {
+      display: block;
+      .team_matches, .team_sidebar {
+        width: 100%;
+      }
+    }
 `
 export const LeagueWrapper = styled.div`
     width: 100%;
@@ -107,10 +127,16 @@ export const LeagueBody = styled.div`
 export const LeagueBodyTop = styled.div`
     width: 100%;
     display: flex;
+    @media (max-width: 465px) {
+      display: block;
+    }
     .league_summary {
         background: #fff;
         padding: 20px;
         width: 70%;
+        @media (max-width: 465px) {
+          width: 100%;
+        }
         .unique_info {
             text-align: center;
             h3 {
@@ -170,6 +196,9 @@ export const LeagueBodyTop = styled.div`
     .league_why_book {
         width: 28%;
         margin-left: 2%;
+        @media (max-width: 465px) {
+          display: none;
+        }
     }
 `
 
@@ -177,12 +206,22 @@ export const LeagueBodyBottom = styled.div`
     width: 100%;
     margin-top: 30px;
     display: flex;
+    @media (max-width: 465px) {
+      display: block;
+    }
     .all_tickets {
         width: 55%;
+        @media (max-width: 465px) {
+          width: 100%;
+        }
     }
     .stadium_info {
         width: 43%;
         margin-left: 2%;
+        @media (max-width: 465px) {
+          width: 100%;
+          margin-left: 0;
+        }
         .stadium {
             margin-bottom: 30px;
             background: #fff;

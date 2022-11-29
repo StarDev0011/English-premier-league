@@ -5,6 +5,10 @@ export const NavBarWrapper = styled.div`
     padding: 2rem;
     background-color: #d91e00;
     position: relative;
+    display: block;
+    @media (max-width: 465px) {
+        display: none;
+    }
 `
 export const NavBarBody = styled.div`
     max-width: 1160px;

@@ -1,5 +1,4 @@
 import axios from "axios";
-import {useState} from 'react'
 import { ListingWrapper, LeagueWrapper, LeagueBody, LeagueBodyTop, LeagueBodyBottom } from "../../organizations/Listing/styles";
 import Link from "next/link";
 import { SiteButton } from "../../atoms/Main_button";

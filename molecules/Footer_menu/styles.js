@@ -10,6 +10,9 @@ export const FooterMenuWrapper = styled.div`
     .footer_container {
         display: flex;
         width: 100%;
+        @media (max-width: 465px) {
+            display: block;
+          }
     }
     ul {
         list-style: none;
