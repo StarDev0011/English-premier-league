@@ -11,7 +11,6 @@ export default function HeaderTop() {
     const [show, setShow] = useState(false)
     const ShowNav = () => {
         setShow(!show)
-        console.log(show)
     }
     return(
         <HeaderTopWrapper>
