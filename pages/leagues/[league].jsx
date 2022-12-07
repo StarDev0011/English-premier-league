@@ -55,7 +55,7 @@ export default function League({tickets, league_data}) {
               <ListingWrapper className="league_listing">
               <h1 className="primary-text">Available tickets</h1>
                 {tickets.length > 0 ? tickets.map((item) => (
-                  <div className="league_item" key={item._id}>
+                  <div className = {`league_item ${item.ticket.category.toLowerCase().replaceAll(' ','-')}`} key={item._id}>
                     <div className="seat">
                       <p>{item.ticket.section} - {item.ticket.category}</p>
                       <Select_Quantity available_quantity={item.ticket.seating.length} />
