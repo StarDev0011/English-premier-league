@@ -6,10 +6,17 @@ import Layout from "../../components/Layout";
 import WhyBook from "../../components/WhyBook";
 import { getDate, getMonth, getYear, getHours, getDay } from 'date-fns'
 import NeedToKnow from "../../components/Need to know";
-import Image from "next/image";
 import Select_Quantity from "../../atoms/Select_Quantity";
+import {useState, useEffect} from 'react'
 
 export default function League({tickets, league_data}) {
+  const [mapsvg, setMapsvg] = useState("")
+  useEffect(() => {
+    fetch(league_data.metadata.venueMapUrl).then((res)=> res.text()).then((data) => {
+      setMapsvg(data)
+    })
+  }, [league_data])
+  
   const Monthdata = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec']
   const Daydata = ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday']
 
@@ -66,7 +73,7 @@ export default function League({tickets, league_data}) {
             <div className="stadium_info">
               <div className="stadium">
                 <h1 className="primary-text">{league_data.metadata.venue}</h1>
-                <Image src = {league_data.metadata.venueMapUrl} alt = "Statidum" width={300} height={300} />
+                <div className="mapsvg" dangerouslySetInnerHTML={{__html: mapsvg}}></div>
               </div>
               <NeedToKnow />
             </div>      
