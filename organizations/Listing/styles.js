@@ -1,4 +1,4 @@
-import styled from 'styled-components'
+import styled from "styled-components";
 
 export const ListingWrapper = styled.div`
   width: 100%;
@@ -87,149 +87,153 @@ export const ListingWrapper = styled.div`
       }
     }
   }
-`
+`;
 export const TeamWrapper = styled.div`
-    width: 100%;
-    padding: 40px 0;
-`
+  width: 100%;
+  padding: 40px 0;
+`;
 export const TeamBody = styled.div`
-    width: 100%;
-    margin-left: auto;
-    margin-right: auto;
-    max-width: 1160px;
-    display: flex;
-    .team_matches {
-        width: 70%;
-    }
+  width: 100%;
+  margin-left: auto;
+  margin-right: auto;
+  max-width: 1160px;
+  display: flex;
+  .team_matches {
+    width: 70%;
+  }
+  .team_sidebar {
+    width: 28%;
+    margin-left: 2%;
+  }
+  @media (max-width: 465px) {
+    display: block;
+    .team_matches,
     .team_sidebar {
-        width: 28%;
-        margin-left: 2%;
+      width: 100%;
     }
-    @media (max-width: 465px) {
-      display: block;
-      .team_matches, .team_sidebar {
-        width: 100%;
-      }
-    }
-`
+  }
+`;
 export const LeagueWrapper = styled.div`
-    width: 100%;
-    padding: 40px 0;
-`
+  width: 100%;
+  padding: 40px 0;
+`;
 
 export const LeagueBody = styled.div`
-    width: 100%;
-    margin-left: auto;
-    margin-right: auto;
-    max-width: 1160px;
-`
+  width: 100%;
+  margin-left: auto;
+  margin-right: auto;
+  max-width: 1160px;
+`;
 
 export const LeagueBodyTop = styled.div`
-    width: 100%;
-    display: flex;
+  width: 100%;
+  display: flex;
+  @media (max-width: 465px) {
+    display: block;
+  }
+  .league_summary {
+    background: #fff;
+    padding: 20px;
+    width: 70%;
     @media (max-width: 465px) {
-      display: block;
+      width: 100%;
     }
-    .league_summary {
-        background: #fff;
-        padding: 20px;
-        width: 70%;
-        @media (max-width: 465px) {
-          width: 100%;
+    .unique_info {
+      text-align: center;
+      h3 {
+        color: #999;
+        text-transform: uppercase;
+      }
+      h1 {
+        font-size: 24px;
+      }
+      .location {
+        color: #d91e00;
+        margin-top: 10px;
+      }
+      .start_date {
+        margin: 10px 0;
+      }
+      .subject_to_change {
+        color: #d91e00;
+      }
+      .sold_out {
+        font-weight: bold;
+        font-size: 22px;
+      }
+      .available_tickets {
+        margin-top: 15px;
+        display: flex;
+        justify-content: center;
+        font-size: 18px;
+        font-weight: bold;
+        .tickets_amount {
+          padding: 10px;
+          background-color: #fff;
+          box-shadow: 0 2px 6px rgb(0 0 0 / 15%);
         }
-        .unique_info {
-            text-align: center;
-            h3 {
-                color: #999;
-                text-transform: uppercase;
-            }
-            h1 {
-                font-size: 24px;
-            }
-            .location {
-                color: #d91e00;
-                margin-top: 10px;
-            }
-            .start_date {
-              margin: 10px 0;
-            }
-            .subject_to_change {
-              color: #d91e00;
-            }
-            .sold_out {
-              font-weight: bold;
-              font-size: 22px;
-            }
-            .available_tickets {
-              margin-top: 15px;
-              display: flex;
-              justify-content: center;
-              font-size: 18px;
-              font-weight: bold;
-              .tickets_amount {
-                padding: 10px;
-                background-color: #fff;
-                box-shadow: 0 2px 6px rgb(0 0 0 / 15%);
-              }
-              p {
-                margin-top: auto;
-                margin-bottom: auto;
-                margin-left: 10px;
-                text-transform: uppercase;
-              }
-            }
-            .price {
-              color: #3db900;
-              font-weight: bold;
-              .cost {
-                font-size: 24px;
-              }
-            }
+        p {
+          margin-top: auto;
+          margin-bottom: auto;
+          margin-left: 10px;
+          text-transform: uppercase;
         }
-        .general_description {
-          margin-top: 10px;
-          p {
-            margin-bottom: 5px;
-          }
+      }
+      .price {
+        color: #3db900;
+        font-weight: bold;
+        .cost {
+          font-size: 24px;
         }
+      }
     }
-    .league_why_book {
-        width: 28%;
-        margin-left: 2%;
-        @media (max-width: 465px) {
-          display: none;
-        }
+    .general_description {
+      margin-top: 10px;
+      p {
+        margin-bottom: 5px;
+      }
     }
-`
+  }
+  .league_why_book {
+    width: 28%;
+    margin-left: 2%;
+    @media (max-width: 465px) {
+      display: none;
+    }
+  }
+`;
 
 export const LeagueBodyBottom = styled.div`
-    width: 100%;
-    margin-top: 30px;
-    display: flex;
+  width: 100%;
+  margin-top: 30px;
+  display: flex;
+  @media (max-width: 465px) {
+    display: block;
+  }
+  .all_tickets {
+    width: 55%;
     @media (max-width: 465px) {
-      display: block;
+      width: 100%;
     }
-    .all_tickets {
-        width: 55%;
-        @media (max-width: 465px) {
+  }
+  .stadium_info {
+    width: 43%;
+    margin-left: 2%;
+    @media (max-width: 465px) {
+      width: 100%;
+      margin-left: 0;
+    }
+    .stadium {
+      margin-bottom: 30px;
+      background: #fff;
+      padding: 20px 20px 0 20px;
+
+      .stadium_map {
+        svg {
           width: 100%;
+          height: auto;
         }
+      }
     }
-    .stadium_info {
-        width: 43%;
-        margin-left: 2%;
-        @media (max-width: 465px) {
-          width: 100%;
-          margin-left: 0;
-        }
-        .stadium {
-            margin-bottom: 30px;
-            background: #fff;
-            padding: 20px 20px 0 20px;
-            img{
-                width: 100%;
-                height: 100%;              
-            }
-        }
-    }
-`
+  }
+`;
