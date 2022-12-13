@@ -61,10 +61,7 @@ const GlobalStyles = createGlobalStyle`
     border-bottom: solid 1px #eee;
     padding-bottom: 10px;
   }
-  .mapsvg svg {
-    width: 100%;
-    height: auto;
-  }
+
   .primary_btn {
     background: #3db900;
     color: #fff;
