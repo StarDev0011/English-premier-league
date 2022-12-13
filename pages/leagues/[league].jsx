@@ -8,13 +8,22 @@ import { getDate, getMonth, getYear, getHours, getDay } from 'date-fns'
 import NeedToKnow from "../../components/Need to know";
 import Select_Quantity from "../../atoms/Select_Quantity";
 import {useState, useEffect} from 'react'
+import Image from "next/image";
 
-export default function League({tickets, league_data}) {
+export default function League({tickets, league_data, id}) {
   const [mapsvg, setMapsvg] = useState("")
+  const [svgformat, setSvgformat] = useState(false)
   useEffect(() => {
-    fetch(league_data.metadata.venueMapUrl).then((res)=> res.text()).then((data) => {
-      setMapsvg(data)
-    })
+    console.log(league_data.metadata.venueMapUrl)
+    if(league_data.metadata.venueMapUrl.indexOf("svg") != -1) {
+      setSvgformat(true)
+      fetch(league_data.metadata.venueMapUrl).then((res)=> res.text()).then((data) => {
+        setMapsvg(data)
+      })
+    }
+    else {
+      setSvgformat(false)
+    }
   }, [league_data])
   
   const Monthdata = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec']
@@ -63,7 +72,7 @@ export default function League({tickets, league_data}) {
                     <div className="ticket-price">
                       <p><span>€{item.price.sellingEur.toFixed(2)}</span> per ticket</p>
                       <SiteButton buttonTheme="light" buttonBorder={false}>
-                        <Link href="/#buy">Buy</Link>
+                        <Link href={`/buy/${id}`}>Buy</Link>
                       </SiteButton>
                     </div>
                   </div>
@@ -73,7 +82,7 @@ export default function League({tickets, league_data}) {
             <div className="stadium_info">
               <div className="stadium">
                 <h1 className="primary-text">{league_data.metadata.venue}</h1>
-                <div className="mapsvg" dangerouslySetInnerHTML={{__html: mapsvg}}></div>
+                {svgformat ? (<div className="mapsvg" dangerouslySetInnerHTML={{__html: mapsvg}}></div>):(<Image src={league_data.metadata.venueMapUrl} alt="Stadium" width={300} height={300} />) }               
               </div>
               <NeedToKnow />
             </div>      
@@ -96,6 +105,6 @@ export async function getServerSideProps(ctx) {
   const league_detail = await axios.get(league_data_url)  
   
   return {
-    props: {tickets: tickets.data.payload, league_data: league_detail.data.payload[0]}, // will be passed to the page component as props
+    props: {tickets: tickets.data.payload, league_data: league_detail.data.payload[0], id:league}, // will be passed to the page component as props
   }
 }
