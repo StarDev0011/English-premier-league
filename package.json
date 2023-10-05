@@ -22,7 +22,7 @@
     "date-fns": "^2.29.3",
     "font-awesome": "^4.7.0",
     "mongodb": "^4.12.1",
-    "next": "^13.0.2",
+    "next": "^13.5.4",
     "png-to-svg": "^1.0.5",
     "react": "18.2.0",
     "react-dom": "18.2.0",
